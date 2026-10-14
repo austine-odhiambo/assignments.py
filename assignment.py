@@ -48,24 +48,3 @@ for name,gate_function in gates_to_test:
             print(f"{str(A):<5} | {str(B):<5} | {int(result)}")
 
 
-def half_adder(A, B):
-    sum_bit =xor_gate(A, B)
-    carry_bit =and_gate(A, B)
-
-    return sum_bit,carry_bit
-print("\n" + "=" *80)
-print("                        BINARY HALF ADDER TRUTH TABLE               ")
-print("=" * 80)
-print("Input A  |  Input B       |        Sum (XOR)        |      Carry (AND)")
-print("-" * 60)
-
-for A in [True, False]:
-    for B in [True, False]:
-        for s, c in [half_adder(A, B)]:
-
-            binary_B =1 if B else 0
-            binary_A =1 if A else 0
-            binary_S =1 if s else 0
-            binary_C =1 if c else 0
-
-            print(f"   {binary_A}     |        {binary_B}         |        {binary_C}         |          {binary_S}")
